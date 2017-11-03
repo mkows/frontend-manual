@@ -19,11 +19,13 @@ To access the [Artifactory web interface](https://hbc.jfrog.io/hbc/webapp/), you
 1. Once authenticated to Artifactory, click on your username in the top right where it says, "Welcome, _username_".
 2. From the User Profile page, click Generate (gear icon) to generate your API key.
 3. Click the green `Save` button in the bottom right.
-4. In the middle the Artifactory homepage in the `Set Me Up` widget, filter by `hbc-virt-npm`. Then click `hbc-virt-npm`.
-5. Copy the code in the `Using basic authentication` section. (It includes `auth`, `email`, and `always-auth` keys)
-6. Open `~/.npmrc` in your text editor of choice and paste in the copied code.
-7. Append `registry=https://hbc.jfrog.io/hbc/api/npm/hbc-virt-npm/` to your npmrc file.
-8. Save your changes; you're all set up!
+4. Click the Artifactory logo on the top left to go back to the homepage.
+5. In the middle the Artifactory homepage in the `Set Me Up` widget, filter by `hbc-virt-npm`. Then click `hbc-virt-npm`.
+6. Copy the code in the `Using basic authentication` section. (It includes `auth`, `email`, and `always-auth` keys)
+7. Open `~/.npmrc` in your text editor of choice and replace the contents of the file with your copied code.
+8. Update the `email` key to match your HBC email.
+9. Append `registry=https://hbc.jfrog.io/hbc/api/npm/hbc-virt-npm/` to your npmrc file.
+10. Save your changes; you're all set up!
 
 ### Creating a new package
 

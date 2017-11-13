@@ -87,7 +87,7 @@ You may have seen some or all of these badges in our repos. So, here's what they
   ```
 -->
 
-* [![hbc autoversion](https://img.shields.io/badge/hbc-auto--version-EFB412.svg)]()
+* [![hbc autoversion](https://img.shields.io/badge/hbc-auto--version-EFB412.svg?colorA=AAAAAA)]()
 
   The _auto-version_ badge indicates that a repo automatically increments its version on each new commit / merge to master.
 
@@ -103,19 +103,33 @@ You may have seen some or all of these badges in our repos. So, here's what they
   _Note: You can also choose to skip auto-version if `message` contains `[ci skip]`._
 
   Embed code:
+  + markdown:
   ```md
-  [![hbc autoversion](https://img.shields.io/badge/hbc-auto--version-EFB412.svg)](https://github.com/saksdirect/frontend-manual/tree/automation/references#automation)
+  [![hbc autoversion](https://img.shields.io/badge/hbc-auto--version-EFB412.svg?colorA=AAAAAA)](https://github.com/saksdirect/frontend-manual/tree/master/references#automation)
+  ```
+  + html:
+  ```html
+  <a href="https://github.com/saksdirect/frontend-manual/tree/master/references#automation">
+      <img src="https://img.shields.io/badge/hbc-auto--version-EFB412.svg?colorA=AAAAAA" alt="hbc auto-version (learn more)">
+  </a>
   ```
 
-* [![hbc autopublish](https://img.shields.io/badge/hbc-auto--publish-0B4580.svg)]()
+* [![hbc autopublish](https://img.shields.io/badge/hbc-auto--publish-0B4580.svg?colorA=AAAAAA)]()
 
   The _auto-publish_ badge indicates that a repo automatically publishes to [Artifactory](#artifactory) on each new commit / merge to master.
 
   _Note: You can also choose to skip auto-publish if the commit / pull-request title contains `[ci skip]`._
 
   Embed code:
+  + markdown:
   ```md
-  [![hbc autopublish](https://img.shields.io/badge/hbc-auto--publish-0B4580.svg)](https://github.com/saksdirect/frontend-manual/tree/automation/references#automation)
+  [![hbc autopublish](https://img.shields.io/badge/hbc-auto--publish-0B4580.svg?colorA=AAAAAA)](https://github.com/saksdirect/frontend-manual/tree/master/references#automation)
+  ```
+  + html:
+  ```html
+  <a href="https://github.com/saksdirect/frontend-manual/tree/master/references#automation">
+      <img src="https://img.shields.io/badge/hbc-auto--publish-0B4580.svg?colorA=AAAAAA" alt="hbc auto-publish (learn more)">
+  </a>
   ```
 
 We should strive to use these features when applicable and display these badges so engineers can immediately know which features are being used.

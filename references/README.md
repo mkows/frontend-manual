@@ -7,6 +7,7 @@
 2. [Concourse](#concourse)
     * [Setting up Concourse](#setting-up-concourse)
     * [Using Concourse](#using-concourse)
+3. [Automation](#automation)
 
 ## Artifactory
 
@@ -58,3 +59,63 @@ install ~/Downloads/fly /usr/local/bin
 ### Using Concourse
 
 Have a question about using Concourse? Add your question and the answer you find here!
+
+## Automation
+
+Anything you find yourself repeating over and over again is a great candidate for automation. We rely on [Concourse](#concourse) to automate most things, and so we've created several pipelines to handle common tasks.
+
+Learn more about our shared [frontend pipelines](https://github.com/saksdirect/frontend-pipelines).
+
+You may have seen some or all of these badges in our repos. So, here's what they each mean:
+
+<!--* [![hbc undefined](https://img.shields.io/badge/hbc-undefined-00704A.svg)]()
+
+  We don't have a use for this beautiful tag yet.
+
+  Embed code:
+  ```md
+  [![hbc undefined](https://img.shields.io/badge/hbc-undefined-00704A.svg)]()
+  ```
+
+* [![hbc undefined](https://img.shields.io/badge/hbc-undefined-9C1B09.svg)]()
+
+  We don't have a use for this beautiful tag yet.
+
+  Embed code:
+  ```md
+  [![hbc undefined](https://img.shields.io/badge/hbc-undefined-9C1B09.svg)]()
+  ```
+-->
+
+* [![hbc autoversion](https://img.shields.io/badge/hbc-auto--version-EFB412.svg)]()
+
+  The _auto-version_ badge indicates that a repo automatically increments its version on each new commit / merge to master.
+
+  _How it works:_
+
+  On each new commit / merge to master, our bot looks at the most recent commit's message (or pull-request title). Let's call this `message`.
+    + If `message` contains `[breaking]`, implying that there is a breaking change in the code, our bot will increment the major version.
+    + If `message` contains `[feature]`, implying that a feature was added in the code, our bot will increment the minor version.
+    + Otherwise, our bot will increment the patch version.
+
+  For more information on versioning, see [SemVer](http://semver.org/).
+
+  _Note: You can also choose to skip auto-version if `message` contains `[ci skip]`._
+
+  Embed code:
+  ```md
+  [![hbc autoversion](https://img.shields.io/badge/hbc-auto--version-EFB412.svg)](https://github.com/saksdirect/frontend-manual/tree/automation/references#automation)
+  ```
+
+* [![hbc autopublish](https://img.shields.io/badge/hbc-auto--publish-0B4580.svg)]()
+
+  The _auto-publish_ badge indicates that a repo automatically publishes to [Artifactory](#artifactory) on each new commit / merge to master.
+
+  _Note: You can also choose to skip auto-publish if the commit / pull-request title contains `[ci skip]`._
+
+  Embed code:
+  ```md
+  [![hbc autopublish](https://img.shields.io/badge/hbc-auto--publish-0B4580.svg)](https://github.com/saksdirect/frontend-manual/tree/automation/references#automation)
+  ```
+
+We should strive to use these features when applicable and display these badges so engineers can immediately know which features are being used.

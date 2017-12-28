@@ -8,6 +8,8 @@
     * [Setting up Concourse](#setting-up-concourse)
     * [Using Concourse](#using-concourse)
 3. [Automation](#automation)
+4. [Terraform](#terraform)
+    * [Quick Reference](#tf-quick-reference)
 
 ## Artifactory
 
@@ -133,3 +135,13 @@ You may have seen some or all of these badges in our repos. So, here's what they
   ```
 
 We should strive to use these features when applicable and display these badges so engineers can immediately know which features are being used.
+
+## Terraform
+
+> Terraform allows us to create infrastructure as code. [Learn more...](https://www.terraform.io/)
+
+### <a name="tf-quick-reference"></a>Quick Reference
+
+* _Are there any existing templates that I can use for my frontend application?_
+
+    **Yes! Our shared terraform modules are in the [frontend-terraform](https://github.com/saksdirect/frontend-terraform) repo.**

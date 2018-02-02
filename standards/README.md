@@ -35,3 +35,17 @@ Proper testing is imperative to the health of any software. These are our best p
 ### Further Improvements
 
 The frontend development landscape is constantly changing. If you would like to propose a change to any of our rules, please raise a Github issue in the respective preset's repository so the team can review it and draw consensus.
+
+## Banner Identifier
+
+A banner identifier convention consists of three-characters used to represent a banner.
+
+Banner identifiers are case sensitive (lowercase) and should always be used in programmatic instances.
+
+| Banner Name              | Identifier |
+| ------------------------ |:----------:|
+| Saks Fifth Avenue        | s5a        |
+| Saks Fifth Avenue Off5th | o5a        |
+| Lord & Taylor            | lat        |
+| The Bay / La Baie        | bay        |
+| Gilt                     | glt        |

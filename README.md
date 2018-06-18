@@ -6,6 +6,10 @@ This manual is a team-driven effort to document frequently asked questions, comm
 
 Please update this documentation with any clarifications or corrections as you discover them.
 
+
+## Browser support
+Based on [Omniture](https://sc5.omniture.com/x/5_62rmc), our current support is [`and_chr >= 62, chrome >= 41, edge >= 14, ie 11, ios_saf >= 11, firefox >= 48, safari >= 8, samsung >= 6`](http://browserl.ist/?q=and_chr+%3E%3D+62%2C+chrome+%3E%3D+41%2C+edge+%3E%3D+14%2C+ie+11%2C+ios_saf+%3E%3D+11%2C+firefox+%3E%3D+48%2C+safari+%3E%3D+8%2C+samsung+%3E%3D+6).
+
 ## Table of Contents
 
 + #### [Welcome](./onboarding)

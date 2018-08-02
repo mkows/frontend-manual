@@ -12,9 +12,7 @@ HBC Accessibility Guideline
   - [5.2. How to use](#52-how-to-use)
 - [6. ADA Reporter](#6-ada-reporter)
   - [6.1. Reporter script](#61-reporter-script)
-  - [6.2. Google Exporter](#62-google-exporter)
-  - [6.3. Dashboard](#63-dashboard)
-  - [6.4. Roadmap/TODO](#64-roadmaptodo)
+  - [6.2. Dashboard](#62-dashboard)
 - [7. Functional Accessibility Tests](#7-functional-accessibility-tests)
 - [8. Accessibility Pipeline](#8-accessibility-pipeline)
 - [9. Screen Readers](#9-screen-readers)
@@ -101,13 +99,13 @@ There are a lot of techniques that can be applied depending on the failed succes
 
 Install Pa11y globally with [this npm package](https://www.npmjs.com/package/pa11y):
 
-`npm install -g pa11y@beta`
+`npm install -g pa11y`
 
-We used pa11y version 5.x (currently beta version) in order to be able to use Chromium - pa11y 4.x uses phantomjs.
+We use pa11y version 5.x that uses Puppeteer (with Chromium).
 
 ## 5.2. How to use
 
-Run an accessibility test against a URL:
+Run an accessibility test against a single URL:
 
 `pa11y http://example.com`
 
@@ -126,41 +124,28 @@ See more in the [README on Pa11y github page](https://github.com/pa11y/pa11y/).
 
 # 6. ADA Reporter
 
-The ADA Reporter is a NPM Package that uses Pa11y to analyzes several pages on the common platform banners (Saks, Saks Off 5th and Lord & Taylor) and generate a report with the accessibility results.
+The ADA Reporter is a NPM Package that we created using Pa11y to analyzes several pages on the common platform banners (Saks, Saks Off 5th and Lord & Taylor) and generate a report with the accessibility results.
 
 All the necessary documentation to install and run can be found in [this repository on Github](https://github.com/saksdirect/ada-reporter).
+
+This tool already ignores injected elements on the common platform and filter WCAG rules that we are following. The idea of these filtered rules is to be compliant with a limited scope and evolve adding new rules along the time.
 
 
 ## 6.1. Reporter script
 
-The core command-line `ada-reporter` generates a report with the code errors found by banner and page in a JSON file. This generated report is used in Google Exporter, Dashboard and in the Pipeline.
+The core command-line `ada-reporter` generates a report with the code errors found by banner and page in a JSON file. This generated report is used in Dashboard and in the Pipeline.
 
 See the options running `ada-reporter --help`
 
-## 6.2. Google Exporter
 
-Is possible to send the generated report to a Google Spreadsheet running the following command from project folder:
-
-```
-node google.js
-```
-
-## 6.3. Dashboard
+## 6.2. Dashboard
 
 There is an accessibility dashboard to display the report results available on the `./reports` directory. Start the express server running:
 ```
-node dashboard.js
+npm run dashboard
 ```
 
 ![Accessibility Dashboard][img-dashboard]
-
-
-## 6.4. Roadmap/TODO
-
-There are a lot of things to do:
-- Split ADA Reporter project in different repositories by functionality;
-- Allow to set Google Spreadsheet ID on the google.js script;
-- Run pa11y actions from ada-reporter script (currently the actions are in another branch);
 
 
 # 7. Functional Accessibility Tests
@@ -183,12 +168,8 @@ The accessibility pipeline can be found on [GoCD](http://go.saksdirect.com/go/ta
 
 ![Accessibility Pipeline flow][img-pipeline-flow]
 
-The accessibility pipeline at the moment has one step, which is run the  ADA Reporter script to analyze issues on several pages of the website. There is a fixed threshold for each page. If the number of errors is greater than this limit, the pipeline job fails.
-
-![Accessibility Pipeline result][img-pipeline-result]
-
-There is a plan to introduce a second step to this pipeline, which will execute accessibility functional tests.
-
+There are 2 steps on the accessibility pipeline. The first one runs ADA Reporter script to analyze the issues on the main pages of the website. There is a fixed threshold for each page. If the number of errors is greater than this limit, the pipeline job fails.
+The second step runs the funcional accessibility tests against Saks website.
 
 
 # 9. Screen Readers

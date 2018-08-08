@@ -20,15 +20,16 @@
 To access the [Artifactory web interface](https://hbc.jfrog.io/hbc/webapp/), you will need to authenticate through [Okta](https://hbctech.okta.com/).
 
 1. Once authenticated to Artifactory, click on your username in the top right where it says, "Welcome, _username_".
-2. From the User Profile page, click Generate (gear icon) to generate your API key.
+2. From the User Profile page, click Generate (gear icon) to generate your API key. Copy your generated API key. (You'll need it in step 8)
 3. Click the green `Save` button in the bottom right.
 4. Click the Artifactory logo on the top left to go back to the homepage.
 5. In the middle the Artifactory homepage in the `Set Me Up` widget, filter by `hbc-virt-npm`. Then click `hbc-virt-npm`.
 6. Copy the code in the `Using basic authentication` section. (It includes `_auth`, `email`, and `always-auth` keys)
-7. Open `~/.npmrc` in your text editor of choice and replace the contents of the file with your copied code. Note: for `_auth` put `<username>:<api_key>` base64 encoded (e.g. `echo -n jdoe:AKC...ykE | base64`).
-8. Update the `email` key to match your HBC email.
-9. Append `registry = https://hbc.jfrog.io/hbc/api/npm/hbc-virt-npm/` to your npmrc file.
-10. Save your changes; you're all set up!
+7. Open `~/.npmrc` in your text editor of choice and replace the contents of the file with your copied code.
+8. Update `_auth` to be the Base64 encoded value of `<username>:<api_key>` (Using key from step 2). For example: `echo -n jdoe:AKC...ykE | base64` then `_auth = amR...a0U=`.
+9. Update the `email` key to match your HBC email.
+10. Append `registry = https://hbc.jfrog.io/hbc/api/npm/hbc-virt-npm/` to your npmrc file.
+11. Save your changes; you're all set up!
 
 ### Creating a new package
 
